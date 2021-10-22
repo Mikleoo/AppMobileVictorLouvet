@@ -3,10 +3,10 @@ const bodyParser = require('body-parser'); // It will help us getting data from 
 const mysql = require('mysql');
 
 const connection = mysql.createPool({
-  host     : 'localhost',//'victorlouvet.fr',
-  user     : 'root',//'ouwb8630_mikleo',
-  password : '',//'/LVbasededonnee94/',
-  database : 'victorlouvet_db'//'ouwb8630_victorlouvet_db',
+  host     : 'localhost',
+  user     : 'root',
+  password : '',
+  database : 'victorlouvet_db'
 });
 
 // Starting our app.
@@ -32,25 +32,3 @@ app.get('/getconseils', function (req, res) {
 app.listen(3000, () => {
  console.log('Go to http://localhost:3000/getconseils so you can see the data.');
 });
-
-/*
-async function getConseils(){
-  await fetch('http://10.200.100.21:3000/getconseils')
-  .then(response => response.json())
-  .then(conseils => console.log(conseils))
-}
-*/
-/*
-async setConseils(){
-  await fetch('http://10.200.100.21:3000/ValidateConseil', {
-    method: 'POST', // Here you're saying that you want to make a POST request. Could be any method, like a GET, for example.
-    headers: '', // You can specify your requisition headers here. That line is optional.
-    body: { // Here's the fun part. Put your data here.
-      "id": this.state.id,
-      "passion": this.state.passion
-    }
-  })
-  .then(response => response.json())
-  .then(serverResponse => console.warn(serverResponse))
-}
-*/
